@@ -40,7 +40,7 @@ public class MainApp {
          System.out.println();
       }
 
-      User user5 = userService.search("Car3", 3);
+      User user5 = userService.getUserByCarAndSeries("Car3", 3);
       System.out.println("Id = "+user5.getId());
       System.out.println("First Name = "+user5.getFirstName());
       System.out.println("Last Name = "+user5.getLastName());

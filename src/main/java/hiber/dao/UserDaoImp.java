@@ -10,7 +10,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional
 public class UserDaoImp implements UserDao {
 
    @Autowired
@@ -22,7 +21,7 @@ public class UserDaoImp implements UserDao {
    }
    @Override
    @SuppressWarnings("unchecked")
-   public User search(String model, int series) {
+   public User getUserByCarAndSeries (String model, int series) {
       TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where car.model = :paramModel and car.series = :paramSeries");
       query.setParameter("paramModel", model);
       query.setParameter("paramSeries", series);
